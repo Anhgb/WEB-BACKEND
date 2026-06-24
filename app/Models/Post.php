@@ -35,6 +35,11 @@ class Post extends Model
         'view_count'   => 'integer',
     ];
 
+    // Các field ảo được tự động append vào mảng/JSON
+    protected $appends = [
+        'reading_time'
+    ];
+
     // ── Local Scopes ────────────────────────────────
     // Scope: chỉ lấy bài đã published
     public function scopePublished(Builder $query): Builder
